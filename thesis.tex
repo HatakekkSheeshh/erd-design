@@ -1,0 +1,81 @@
+% 'draft' mode can be used to speed up compilation
+\documentclass[final]{hcmut-thesis}
+
+%\usepackage{pdfpages}
+%\usepackage[draft,pageno]{listofsymbols}
+
+% Draft watermark
+% https://github.com/callegar/LaTeX-draftwatermark
+
+% References
+% Use \Cref{} instead of \ref{}
+\usepackage[nameinlink]{cleveref}
+
+% FOR DEMONSTRATION PURPOSES, REMOVE IN PRODUCTION
+\usepackage{blindtext}
+
+% Sub-preambles
+% https://tex.stackexchange.com/a/395416
+
+% Configurations
+\reporttype{DATABASE SYSTEMS (CO2013)}
+\title{Learning Management System}
+\defcouncil{Council H}
+\supervisor{
+  Assoc.~Prof.~Dr.~H1
+
+}
+
+\stuname{
+  STUDENT 1: Phan Tiến Huy (235xxx)
+
+  STUDENT 2: Nguyễn Quốc Hiệu (2352344)
+
+  STUDENT 3: Chu Nguyễn Tuấn Anh (235xxx)
+
+  STUDENT 3: Vũ Hải Tuấn (235xxx)
+
+  STUDENT 3: Phạm Quang Tiến Thành (235xxx)
+}
+
+% Allow page breaks inside align* environment
+%\allowdisplaybreaks{}
+
+% Makes a lot of things blue, avoid at all costs
+%\everymath{\color{blue}}
+
+% Custom commands
+%\newcommand*\mean[1]{\bar{#1}}
+
+\begin{document}
+\coverpage%
+
+\frontmatter%
+
+\tableofcontents
+%\clearpage
+%\listofsymbols%
+\clearpage
+\listoftables
+\clearpage
+\listoffigures
+
+\mainmatter%
+
+% Set depth of numbering depth for counters
+\counterwithin{equation}{section}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+
+\include{chapter_1/main}
+\include{chapter_2/main}
+\include{chapter_3/main}
+
+\bibliographystyle{plain}
+\bibliography{refs/example.bib}
+\nocite{*}
+
+
+\backmatter%
+
+\end{document}
